@@ -1,0 +1,41 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+ 
+# Virtual environment
+venv/
+env/
+.venv/
+.env/
+
+# Django stuff:
+*.log
+*.pot
+*.pyc
+db.sqlite3  # SQLite database
+/media/  # Media files (uploads)
+/staticfiles/  # Static files
+/static/  # If you're using collectstatic
+*.DS_Store  # macOS specific
+*.egg-info/
+*.egg
+
+# Sensitive files
+*.env  # Environment variables file
+secret.key  # If you store your secret key in a separate file
+
+# IDE or Editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Coverage reports
+htmlcov/
+.coverage
+
+# Pytest cache
+.pytest_cache/
