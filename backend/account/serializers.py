@@ -10,14 +10,14 @@ from django.contrib.auth.tokens import PasswordResetTokenGenerator
 # serializers.Serializer vs serializers.ModelSerializer = here ModelSerializer is tied to a django model and Serializer is not tied to any model
 class LoginSerializer(serializers.Serializer):
     # setting the required criteria on username and password, these values will eventually come from frontend, i am just defining requirements for them to client-side
-    username = serializers.CharField(required=True)
+    email = serializers.EmailField(required=True)
     password = serializers.CharField(write_only=True, required=True)
 
     def validate(self, data):
-        username = data.get('username')
+        email = data.get('email')
         password = data.get('password')
 
-        user = authenticate(username=username, password=password)
+        user = authenticate(username=email, password=password)
         if user is None:
             raise serializers.ValidationError("Invalid username or password.")
         data['user'] = user
@@ -28,10 +28,16 @@ class RegisterSerializer(serializers.ModelSerializer):
     # below, i am customizing and giving requirements to email and password fields of django/drf's built in custom user model
 
     # and password2 is just a write_only field, i will not store it in db so i didn't create any models for it
+    username = serializers.CharField(
+        required=True,
+        validators=[UniqueValidator(queryset=User.objects.all())]
+    )
+
     email = serializers.EmailField(
         required=True,
         validators=[UniqueValidator(queryset=User.objects.all())]
     )
+
     password = serializers.CharField(
         write_only=True, required=True, min_length=8)
     password2 = serializers.CharField(

@@ -1,0 +1,101 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+:root {
+  /* Font Family */
+  --font-inter: "Inter", sans-serif;
+
+  /* Background Colors */
+  --clr-bg-primary: #f5f5f7; /* Main window background */
+  --clr-bg-secondary: #e5e5e5; /* Secondary panel background */
+  --clr-bg-dark: #1d1d1f; /* Dark mode background */
+  --clr-bg-light: #fafafa; /* Light mode background */
+
+  /* Text Colors */
+  --clr-text-primary: #1c1c1e; /* Primary text color */
+  --clr-text-secondary: #3a3a3c; /* Secondary text */
+  --clr-text-inverted: #ffffff; /* Inverted text (for dark backgrounds) */
+  --clr-text-muted: #8e8e93; /* Muted text */
+  --clr-text-link: #007aff; /* Hyperlink blue */
+
+  /* Button Colors */
+  --clr-btn-primary: #007aff; /* Primary button (blue) */
+  --clr-btn-secondary: #34c759; /* Secondary button (green) */
+  --clr-btn-warning: #ffcc00; /* Warning button (yellow) */
+  --clr-btn-danger: #ff3b30; /* Danger button (red) */
+  --clr-btn-neutral: #e0e0e0; /* Neutral button */
+  --clr-btn-hover: #0056d3; /* Button hover color (blue) */
+
+  /* Border Colors */
+  --clr-border-light: #d6d6d6; /* Light border */
+  --clr-border-medium: #c8c8c8; /* Medium border */
+  --clr-border-dark: #3a3a3c; /* Dark border */
+  --clr-border-highlight: #007aff; /* Focus border (blue) */
+  --clr-border-danger: #ff3b30; /* Error border */
+
+  /* Highlight and Accent Colors */
+  --clr-accent-blue: #007aff; /* System accent blue */
+  --clr-accent-green: #34c759; /* System accent green */
+  --clr-accent-yellow: #ffcc00; /* System accent yellow */
+  --clr-accent-red: #ff3b30; /* System accent red */
+  --clr-accent-orange: #ff9500; /* Orange accent */
+  --clr-accent-purple: #af52de; /* Purple accent */
+  --clr-accent-pink: #ff2d55; /* Pink accent */
+  --clr-accent-gray: #8e8e93; /* Gray accent */
+
+  /* Grayscale Shades */
+  --clr-grey-100: #f2f2f7;
+  --clr-grey-200: #e5e5ea;
+  --clr-grey-300: #d1d1d6;
+  --clr-grey-400: #c7c7cc;
+  --clr-grey-500: #aeaeb2;
+  --clr-grey-600: #8e8e93;
+  --clr-grey-700: #636366;
+  --clr-grey-800: #48484a;
+  --clr-grey-900: #1c1c1e;
+
+  /* Shadows */
+  --box-shadow-light: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --box-shadow-medium: 0 3px 6px rgba(0, 0, 0, 0.15);
+  --box-shadow-heavy: 0 5px 10px rgba(0, 0, 0, 0.2);
+
+  /* Border Sizes */
+  --border-size-thin: 1px;
+  --border-size-medium: 2px;
+  --border-size-thick: 3px;
+
+  /* Border Radii */
+  --border-radius-small: 4px;
+  --border-radius-medium: 8px;
+  --border-radius-large: 12px;
+}
+
+* {
+  font-family: var(--font-inter);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global styles */
+
+body {
+  padding: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* CSS for ./auth/Login */
+
+.login-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  box-shadow: var(--box-shadow-medium);
+  border-radius: var(--border-radius-medium);
+}
+
+.login-button {
+  width: 100%;
+}
