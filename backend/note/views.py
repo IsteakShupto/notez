@@ -1,11 +1,13 @@
 from rest_framework.response import Response
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
 from .models import Note
 from .serializers import NoteSerializer
 
 
 @api_view(['GET', 'POST'])
+@permission_classes([IsAuthenticated])
 def notes_list(request):
     if request.method == 'GET':
         # Get a list of all notes
@@ -22,6 +24,7 @@ def notes_list(request):
 
 
 @api_view(['GET', 'PUT', 'DELETE'])
+@permission_classes([IsAuthenticated])
 def note(request, pk):
     try:
         # Get individual note based on provided pk
